@@ -4,7 +4,7 @@
 ![Demo Image](https://u.teknik.io/gHzZf.png)
 
 <div align="center">
-	<h3><a href="https://manc.capuno.cat/">Live Demo</a></h3>
+	<h3><a href="https://decaux.capuno.cat/">Live Demo</a></h3>
 </div>
 
 ### Usage
