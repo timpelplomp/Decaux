@@ -1,4 +1,4 @@
-# Manc
+# Decaux
 ### A material style, keyboard friendly and easily customizable startpage.
 
 ![Demo Image](https://u.teknik.io/gHzZf.png)
