@@ -1,12 +1,20 @@
 var focused = 1; // It's global so I can save it and then use it when I quit the search bar.
 
-window.onfocus = function(){document.getElementById(focused).focus()}; // Focus at start and when window is focused again.
+window.onfocus = function(){document.getElementById(focused).focus();}; // Focus at start and when window is focused again.
+
+window.onclick = function(e){
+	if ( document.activeElement.id != "search" ) {
+		document.getElementById(focused).focus();
+	}
+};
 
 document.getElementById("search").onblur = function(){ // Unfocusing search bar
+	document.getElementById(focused).focus();
 	document.getElementById("escape").style.opacity = 0;
 	document.getElementById("blackout").style.opacity = 0;
 	document.getElementById("blackout").style.pointerEvents = "none";
 	document.getElementById("liveClock").style.color = '';
+	document.getElementById("search").value = '';
 };
 document.getElementById("search").onfocus = function(){ // Focusing search bar
 	document.getElementById("escape").style.opacity = .7;
@@ -41,8 +49,7 @@ document.onkeydown = function(e) {
 	if (!document.activeElement.id) {
 		// Keys for help and search still working even if no block selected, if it's another key, then select last block.
 		if ( key == 32 ) { // Key space, focus search bar and show [ESP] instruction.
-			document.getElementById("escape").style.opacity = .7;
-			result = "search"
+			document.getElementById("search").focus();
 		} else if ( key == 72 ) { // H key, toggle instructions.
 			helpToggle();
 		} else {
@@ -62,7 +69,6 @@ document.onkeydown = function(e) {
 	var result = null;
 
 	if ( key == 32 ) { // Key space, focus search bar and show [ESP] instruction.
-		document.getElementById("escape").style.opacity = .7;
 		result = "search"
 	} else if ( key == 72 ) { // H key, toggle instructions.
 		helpToggle();

@@ -13,6 +13,12 @@
 	--background: #211D1B;
 	--base-txt: #4D6358;
 }
+::-webkit-input-placeholder {
+    opacity: 1 !important;
+}
+::-moz-placeholder {
+    opacity: 1 !important;
+}
 body, html {
 	font-family: 'Open Sans Condensed', sans-serif;
 	background-color: var(--background);
